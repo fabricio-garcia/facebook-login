@@ -37,8 +37,9 @@ code {
   font-size: 56px;
 }
 
-div.forgot-pass-container {
-  border-bottom: 1px solid #DADDE1;
+div.forgot-pass-container,
+div.top-lang-row {
+  border-bottom: 1px solid #dadde1;
   padding-bottom: 1em;
 }
 
@@ -46,4 +47,14 @@ div.forgot-pass-container {
   color: #1877f2;
   font-size: 14px;
   text-decoration: none;
+}
+
+.languages {
+  color: #94979e;
+  font-size: 12px;
+  list-style-type: none;
+}
+
+li {
+  padding-right: 1rem;
 }
