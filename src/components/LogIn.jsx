@@ -1,6 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const Registration = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
   return (
     <React.Fragment>
       <div className="container w-75 form-background">
@@ -10,6 +13,7 @@ const Registration = () => {
               type="email"
               className="form-control"
               placeholder="Email or Phone Number"
+              value={email}
             />
           </div>
           <div className="form-group">
@@ -17,6 +21,7 @@ const Registration = () => {
               type="password"
               className="form-control"
               placeholder="Password"
+              value={password}
             />
           </div>
           <button className="btn btn-primary btn-lg btn-block">Log In</button>
