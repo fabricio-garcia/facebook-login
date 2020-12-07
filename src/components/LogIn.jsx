@@ -1,8 +1,30 @@
 import React, { useState } from 'react';
 
-const Registration = () => {
+const LogIn = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+
+  const login = () => {
+    let count = 0;
+
+    const exampleUsers = [
+      { email: 'user1', password: 'user1' },
+      { email: 'user2', password: 'user2' },
+      { email: 'user3', password: 'user3' },
+    ];
+
+    for (let user of exampleUsers) {
+      if (user.email === email && user.password === password) {
+        count += 1;
+      }
+    }
+
+    if (count === 1) {
+      alert('Login Successful!');
+    } else {
+      alert('Login Failed, try again');
+    }
+  };
 
   return (
     <React.Fragment>
@@ -14,6 +36,9 @@ const Registration = () => {
               className="form-control"
               placeholder="Email or Phone Number"
               value={email}
+              onChange={e => {
+                setEmail(e.target.value);
+              }}
             />
           </div>
           <div className="form-group">
@@ -22,9 +47,14 @@ const Registration = () => {
               className="form-control"
               placeholder="Password"
               value={password}
+              onChange={e => {
+                setPassword(e.target.value);
+              }}
             />
           </div>
-          <button className="btn btn-primary btn-lg btn-block">Log In</button>
+          <button className="btn btn-primary btn-lg btn-block" onClick={login}>
+            Log In
+          </button>
           <div className="forgot-pass-container mt-3 mb-3">
             <a
               className="forgot-pass"
@@ -49,4 +79,4 @@ const Registration = () => {
   );
 };
 
-export default Registration;
+export default LogIn;
